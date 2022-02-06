@@ -1,16 +1,16 @@
 import * as React from "react";
-import { Text } from "react-native";
-import { useTheme } from "react-native-paper";
-import CustomIcon from "./CustomIcon";
+import { StyleSheet, Provider } from "react-native";
+import { FAB, Portal, useTheme } from "react-native-paper";
 
-const CardAction = (props) => {
-  const { colors } = useTheme();
+const CustomFAB = () => {
+  const [open, setOpen] = React.useState(false);
+
   return (
     <Provider>
       <Portal>
         <FAB.Group
           open={open}
-          icon={open ? "calendar-today" : "plus"}
+          icon={open ? "minus" : "plus"}
           actions={[
             { icon: "plus", onPress: () => console.log("Pressed add") },
             {
@@ -30,7 +30,7 @@ const CardAction = (props) => {
               small: false,
             },
           ]}
-          onStateChange={onStateChange}
+          onStateChange={() => setOpen(!open)}
           onPress={() => {
             if (open) {
               // do something if the speed dial is open
@@ -42,4 +42,15 @@ const CardAction = (props) => {
   );
 };
 
-export default CardAction;
+const styles = ({ colors }) =>
+  StyleSheet.create({
+    fab: {
+      position: "absolute",
+      backgroundColor: colors.primary,
+      margin: 16,
+      right: 0,
+      bottom: 0,
+    },
+  });
+
+export default CustomFAB;

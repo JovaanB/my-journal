@@ -3,12 +3,15 @@ import CustomCard from "../Components/Card";
 import SearchBar from "../Components/SearchBar";
 import elements from "../CustomProperties/elements";
 import { ScrollView } from "react-native";
+import FAB from "../Components/FAB";
+import ActionsMenu from "../Components/ActionsMenu";
+import CustomFAB from "../Components/FAB";
 
 const MusicRoute = () => {
   return (
     <React.Fragment>
       <SearchBar />
-      <ScrollView>
+      {/* <ScrollView>
         {elements.map((ele) => (
           <CustomCard
             key={ele.id}
@@ -21,7 +24,8 @@ const MusicRoute = () => {
             likes={ele.likes}
           />
         ))}
-      </ScrollView>
+      </ScrollView> */}
+      <CustomFAB />
     </React.Fragment>
   );
 };
