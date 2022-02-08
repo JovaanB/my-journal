@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Provider } from "react-native";
-import { FAB, Portal, useTheme } from "react-native-paper";
+import { FAB, Portal } from "react-native-paper";
 
 const CustomFAB = () => {
   const [open, setOpen] = React.useState(false);

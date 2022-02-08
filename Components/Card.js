@@ -2,7 +2,6 @@ import * as React from "react";
 import { Image, StyleSheet } from "react-native";
 import { Card, Text, Paragraph } from "react-native-paper";
 
-import CardAction from "./CardAction";
 import Likes from "./Likes";
 
 const CustomCard = (props) => {
@@ -33,11 +32,7 @@ const CustomCard = (props) => {
 
         <Card.Content style={styles.horizontalLine} />
 
-        <Card.Content style={styles.action}>
-          <CardAction name="thumb-up-outline" text="Like" />
-          <CardAction name="message-outline" text="Comment" />
-          <CardAction name="share-outline" text="Share" />
-        </Card.Content>
+        <Card.Content style={styles.action}></Card.Content>
       </Card>
     </React.Fragment>
   );
